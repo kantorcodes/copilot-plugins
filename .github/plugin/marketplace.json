@@ -128,6 +128,27 @@
       "repository": "https://github.com/github/copilot-advanced-security-plugin"
     },
     {
+      "name": "azure-devops-copilot-plugin",
+      "source": {
+        "source": "github",
+        "repo": "microsoft/azure-devops-copilot-plugin"
+      },
+      "description": "Bring Azure DevOps work-item, repository, and pull-request workflows into GitHub Copilot.",
+      "author": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "homepage": "https://github.com/microsoft/azure-devops-copilot-plugin",
+      "repository": "https://github.com/microsoft/azure-devops-copilot-plugin",
+      "keywords": [
+        "azure-devops",
+        "ado",
+        "work-items",
+        "pull-requests"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "fabric-skills",
       "source": {
         "source": "github",
