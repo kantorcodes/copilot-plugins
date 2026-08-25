@@ -70,8 +70,13 @@ jobs:
           PY
 
           python -m json.tool .github/plugin/marketplace.json >/dev/null
-          test "$(grep -c '"'"'name"'"': "'"'hol-guard"'"'' .github/plugin/marketplace.json)" = 1
-          test "$(grep -c 'HOL Guard' README.md)" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('.github/plugin/marketplace.json').read_text())
+          assert sum(p.get('name') == 'hol-guard' for p in data['plugins']) == 1
+          assert Path('README.md').read_text().count('HOL Guard') == 1
+          PY
           git diff --check
           git add .github/plugin/marketplace.json README.md
           git commit -m "chore: refresh HOL Guard plugin on latest main"
